@@ -3,7 +3,7 @@ require 'guard/guard'
 
 module Guard
   class Delayed < Guard
-    
+
     # Allowable options are:
     # :environment  e.g. 'test'
     # :min_priority e.g. 2
@@ -14,7 +14,7 @@ module Guard
     # :monitor                    Start monitor process.
     # :sleep-delay N              Amount of time to sleep in seconds when no jobs are found
     # :prefix NAME                String to be prefixed to worker process names
-    
+
     def initialize(watchers = [], options = {})
       @options = options
       super
@@ -58,16 +58,16 @@ module Guard
     def run_on_change(paths)
       restart
     end
-    
+
     private
-    
+
     def restart
       system(cmd, 'restart')
     end
-    
+
     def cmd
       command = "script/delayed_job"
-      command = "RAILS_ENV=#{@options[:environment]} #{command}" if @options[:environment]
+      command = "export RAILS_ENV=#{@options[:environment]}; #{command}" if @options[:environment]
       command
     end
   end
