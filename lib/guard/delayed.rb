@@ -21,18 +21,19 @@ module Guard
     end
 
     def start
-      system(cmd, 'stop')
+      system("#{cmd} stop")
       UI.info "Starting up delayed_job..."
-      args = "start"
-      args << " --min-priority #{@options[:min_priority]}" if @options[:min_priority]
-      args << " --max-priority #{@options[:max_priority]}" if @options[:max_priority]
-      args << " --number_of_workers=#{@options[:number_of_workers]}" if @options[:number_of_workers]
-      args << " --pid-dir=#{@options[:pid_dir]}" if @options[:pid_dir]
-      args << " --identifier=#{@options[:identifier]}" if @options[:identifier]
-      args << " --monitor" if @options[:monitor]
-      args << " --sleep-delay #{@options[:sleep_delay]}" if @options[:sleep_delay]
-      args << " --prefix #{@options[:prefix]} " if @options[:prefix]
-      system(cmd, args)
+      command = cmd
+      command << " start"
+      command << " --min-priority #{@options[:min_priority]}" if @options[:min_priority]
+      command << " --max-priority #{@options[:max_priority]}" if @options[:max_priority]
+      command << " --number_of_workers=#{@options[:number_of_workers]}" if @options[:number_of_workers]
+      command << " --pid-dir=#{@options[:pid_dir]}" if @options[:pid_dir]
+      command << " --identifier=#{@options[:identifier]}" if @options[:identifier]
+      command << " --monitor" if @options[:monitor]
+      command << " --sleep-delay #{@options[:sleep_delay]}" if @options[:sleep_delay]
+      command << " --prefix #{@options[:prefix]} " if @options[:prefix]
+      system(command)
     end
 
     # Called on Ctrl-C signal (when Guard quits)
