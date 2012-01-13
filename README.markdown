@@ -39,10 +39,6 @@ being active.
 Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change
 you make.
 
-## Testing the gem locally
-
-    gem install guard-delayed-0.1.1.gem
-
 ## Building and deploying gem
 
  * Update the version number in `lib/guard/delayed/version.rb`
@@ -53,8 +49,12 @@ you make.
     
  * Push to rubygems.org:
  
-    gem push guard-delayed-0.1.1.gem
+    gem push guard-delayed-0.1.2.gem
     
+## Testing the gem locally
+
+    gem install guard-delayed-0.1.2.gem
+
 
 ## Authors
 

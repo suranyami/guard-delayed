@@ -1,3 +1,7 @@
+## 0.1.2 (2012-01-13)
+
+ * Now passing the environment in using the --environment argument to script/delayed_job
+
 ## 0.1.0 (2011-07-28)
 
  * Fixed options for current delayed_job version (from dbloete)
