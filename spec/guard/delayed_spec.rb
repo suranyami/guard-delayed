@@ -1,20 +1,12 @@
 require 'spec_helper'
 
 describe Guard::Delayed do
-  subject { Guard::Delayed.new }
-
-  describe "start" do
-    before do
-      subject = Guard::Delayed.new
-    end
-
-    after do
-      subject.stop
-    end
-
-    it "should create a pid in /tmp/pids" do
-      subject.start
-      Dir.glob("tmp/pids/delayed_job*.pid").should_not be_empty
+  describe "when passing an environment option" do
+    it "calls system with an --environment arg" do
+      @delayed = Guard::Delayed.new([], {:environment => 'test'})
+      @delayed.should_receive(:system).with("script/delayed_job --environment=test", "stop").and_return(true)
+      @delayed.should_receive(:system).with("script/delayed_job --environment=test", "start").and_return(true)
+      @delayed.start
     end
   end
 end
