@@ -5,9 +5,9 @@ module Guard
   class Delayed < Guard
     
     # Allowable options are:
-    # :environment  e.g. 'test'
-    # :min_priority e.g. 2
-    # :max_priority e.g. 10
+    # :environment    defaults to 'test'
+    # :min_priority   e.g. 2
+    # :max_priority   e.g. 10
     # :number_of_workers e.g. 2
     # :pid_dir  e.g. tmp/pids Specifies an alternate directory in which to store the process ids.
     # :identifier     A numeric identifier for the worker.
@@ -17,21 +17,13 @@ module Guard
     
     def initialize(watchers = [], options = {})
       @options = options
-      super
+      super(watchers, options)
     end
 
     def start
       system(cmd, 'stop')
       UI.info "Starting up delayed_job..."
       args = "start"
-      args << " --min-priority #{@options[:min_priority]}" if @options[:min_priority]
-      args << " --max-priority #{@options[:max_priority]}" if @options[:max_priority]
-      args << " --number_of_workers=#{@options[:number_of_workers]}" if @options[:number_of_workers]
-      args << " --pid-dir=#{@options[:pid_dir]}" if @options[:pid_dir]
-      args << " --identifier=#{@options[:identifier]}" if @options[:identifier]
-      args << " --monitor" if @options[:monitor]
-      args << " --sleep-delay #{@options[:sleep_delay]}" if @options[:sleep_delay]
-      args << " --prefix #{@options[:prefix]} " if @options[:prefix]
       system(cmd, args)
     end
 
@@ -67,7 +59,15 @@ module Guard
     
     def cmd
       command = "script/delayed_job"
-      command = "RAILS_ENV=#{@options[:environment]} #{command}" if @options[:environment]
+      command << " --min-priority #{@options[:min_priority]}" if @options[:min_priority]
+      command << " --max-priority #{@options[:max_priority]}" if @options[:max_priority]
+      command << " --number_of_workers=#{@options[:number_of_workers]}" if @options[:number_of_workers]
+      command << " --pid-dir=#{@options[:pid_dir]}" if @options[:pid_dir]
+      command << " --identifier=#{@options[:identifier]}" if @options[:identifier]
+      command << " --monitor" if @options[:monitor]
+      command << " --sleep-delay #{@options[:sleep_delay]}" if @options[:sleep_delay]
+      command << " --prefix #{@options[:prefix]}" if @options[:prefix]
+      command << " --environment=#{@options[:environment]}" if @options[:environment]
       command
     end
   end
