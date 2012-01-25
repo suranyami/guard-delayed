@@ -5,15 +5,15 @@ module Guard
   class Delayed < Guard
 
     # Allowable options are:
-    # :environment    defaults to 'test'
-    # :min_priority   e.g. 2
-    # :max_priority   e.g. 10
-    # :number_of_workers e.g. 2
-    # :pid_dir  e.g. tmp/pids Specifies an alternate directory in which to store the process ids.
-    # :identifier     A numeric identifier for the worker.
-    # :monitor                    Start monitor process.
-    # :sleep-delay N              Amount of time to sleep in seconds when no jobs are found
-    # :prefix NAME                String to be prefixed to worker process names
+    # :environment        defaults to 'test'
+    # :min_priority       e.g. 2
+    # :max_priority       e.g. 10
+    # :number_of_workers  e.g. 2
+    # :pid_dir            e.g. tmp/pids Specifies an alternate directory in which to store the process ids.
+    # :identifier         A numeric identifier for the worker.
+    # :monitor            Start monitor process.
+    # :sleep-delay N      Amount of time to sleep in seconds when no jobs are found
+    # :prefix NAME        String to be prefixed to worker process names
 
     def initialize(watchers = [], options = {})
       @options = options
