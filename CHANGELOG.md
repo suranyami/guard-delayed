@@ -1,6 +1,8 @@
-## 0.1.2 (2012-01-13)
+## 0.1.2 (2012-01-25)
 
- * Now passing the environment in using the --environment argument to script/delayed_job
+ * Now passing the environment in using 'export RAILS_ENV=test;' before calling script/delayed_job
+   Thanks to @rwz for this patch
+ * Added a meaningful spec that checks the system call using a mock. Much nicer!
 
 ## 0.1.0 (2011-07-28)
 
