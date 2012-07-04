@@ -49,11 +49,11 @@ you make.
     
  * Push to rubygems.org:
  
-    gem push guard-delayed-0.1.2.gem
+    gem push guard-delayed-0.2.0.gem
     
 ## Testing the gem locally
 
-    gem install guard-delayed-0.1.2.gem
+    gem install guard-delayed-0.2.0.gem
 
 
 ## Authors
