@@ -36,8 +36,8 @@ being active.
  * Source hosted at [GitHub](http://github.com/suranyami/guard-delayed)
  * Report issues/Questions/Feature requests on [GitHub Issues](http://github.com/suranyami/guard-delayed/issues)
 
-Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change
-you make.
+Pull requests are very welcome! Make sure your patches are well tested.
+Please create a topic branch for every separate change you make.
 
 ## Building and deploying gem
 
@@ -46,11 +46,11 @@ you make.
  * Build the gem:
  
     gem build guard-delayed.gemspec
-    
+
  * Push to rubygems.org:
  
     gem push guard-delayed-0.2.0.gem
-    
+
 ## Testing the gem locally
 
     gem install guard-delayed-0.2.0.gem
