@@ -4,13 +4,13 @@ Guard::Delayed automatically starts/stops/restarts delayed_job
 
 ## Install
 
-Please be sure to have [Guard](http://github.com/guard/guard) installed before continue.
+Please be sure to have [Guard](http://github.com/guard/guard) installed before continuing.
 
 Install the gem:
 
     gem install guard-delayed
 
-Add it to your Gemfile (inside test group):
+or add it to your Gemfile (inside your development and/or test group):
 
     gem 'guard-delayed'
 
