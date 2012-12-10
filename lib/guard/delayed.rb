@@ -39,7 +39,7 @@ module Guard
     # Called on Ctrl-C signal (when Guard quits)
     def stop
       UI.info "Stopping delayed_job..."
-      system(cmd, 'stop')
+      system("#{cmd} stop")
     end
 
     # Called on Ctrl-Z signal
@@ -63,7 +63,7 @@ module Guard
     private
 
     def restart
-      system(cmd, 'restart')
+      system("#{cmd} restart")
     end
 
     def cmd

@@ -8,5 +8,11 @@ describe Guard::Delayed do
       @delayed.should_receive(:system).with("export RAILS_ENV=test; script/delayed_job start").and_return(true)
       @delayed.start
     end
+
+    it "calls system with 'export RAILS_ENV=test;' after changes" do
+      @delayed = Guard::Delayed.new([], {:environment => 'test'})
+      @delayed.should_receive(:system).with("export RAILS_ENV=test; script/delayed_job restart").and_return(true)
+      @delayed.run_on_changes([])
+    end
   end
 end
