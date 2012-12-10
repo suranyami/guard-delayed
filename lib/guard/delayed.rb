@@ -21,25 +21,24 @@ module Guard
     end
 
     def start
-      system("#{cmd} stop")
+      run_cmd("stop")
       UI.info "Starting up delayed_job..."
-      command = cmd
-      command << " start"
-      command << " --min-priority #{@options[:min_priority]}" if @options[:min_priority]
-      command << " --max-priority #{@options[:max_priority]}" if @options[:max_priority]
-      command << " --number_of_workers=#{@options[:number_of_workers]}" if @options[:number_of_workers]
-      command << " --pid-dir=#{@options[:pid_dir]}" if @options[:pid_dir]
-      command << " --identifier=#{@options[:identifier]}" if @options[:identifier]
-      command << " --monitor" if @options[:monitor]
-      command << " --sleep-delay #{@options[:sleep_delay]}" if @options[:sleep_delay]
-      command << " --prefix #{@options[:prefix]} " if @options[:prefix]
-      system(command)
+      parameters  = "start"
+      parameters << " --min-priority #{@options[:min_priority]}" if @options[:min_priority]
+      parameters << " --max-priority #{@options[:max_priority]}" if @options[:max_priority]
+      parameters << " --number_of_workers=#{@options[:number_of_workers]}" if @options[:number_of_workers]
+      parameters << " --pid-dir=#{@options[:pid_dir]}" if @options[:pid_dir]
+      parameters << " --identifier=#{@options[:identifier]}" if @options[:identifier]
+      parameters << " --monitor" if @options[:monitor]
+      parameters << " --sleep-delay #{@options[:sleep_delay]}" if @options[:sleep_delay]
+      parameters << " --prefix #{@options[:prefix]} " if @options[:prefix]
+      run_cmd(parameters)
     end
 
     # Called on Ctrl-C signal (when Guard quits)
     def stop
       UI.info "Stopping delayed_job..."
-      system(cmd, 'stop')
+      run_cmd("stop")
     end
 
     # Called on Ctrl-Z signal
@@ -63,13 +62,19 @@ module Guard
     private
 
     def restart
-      system(cmd, 'restart')
+      run_cmd('restart')
     end
 
     def cmd
       command = "script/delayed_job"
       command = "export RAILS_ENV=#{@options[:environment]}; #{command}" if @options[:environment]
       command
+    end
+
+    def run_cmd(parameters)
+      sys_response = system("#{cmd} #{parameters}")
+      raise StandardError, "Bad command: #{cmd} #{parameters}" if sys_response.nil? || !sys_response
+      sys_response
     end
   end
 end
