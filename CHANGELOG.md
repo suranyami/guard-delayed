@@ -1,3 +1,7 @@
+## 0.2.1 (2012-12-10)
+
+ * Fixed script/delayed\_job call when passing RAILS_ENV in dash shell (not sure if it happens with other ones)
+
 ## 0.2.0 (2012-07-04)
 
  * Merged pull request from @drewda to support guard 1.1
