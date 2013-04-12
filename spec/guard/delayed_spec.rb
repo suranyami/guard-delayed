@@ -25,4 +25,28 @@ describe Guard::Delayed do
       lambda { subject.run_on_changes([]) }.should raise_error 
     end
   end
+  describe "when passing a root option" do
+    subject { Guard::Delayed.new([], {:root => 'test/dummy'}) }
+
+    it "calls system in correct directory call first" do
+      subject.should_receive(:system).with("test/dummy/script/delayed_job stop").and_return(true)
+      subject.should_receive(:system).with("test/dummy/script/delayed_job start").and_return(true)
+      subject.start
+    end
+
+    it "calls system in correct directory after changes" do
+      subject.should_receive(:system).with("test/dummy/script/delayed_job restart").and_return(true)
+      subject.run_on_changes([])
+    end
+
+    it "should raise an exception when system call fails" do
+      subject.should_receive(:system).and_return(nil)
+      lambda { subject.run_on_changes([]) }.should raise_error 
+    end
+
+    it "should raise an exception when system command fails " do
+      subject.should_receive(:system).and_return(false)
+      lambda { subject.run_on_changes([]) }.should raise_error 
+    end
+  end 
 end
