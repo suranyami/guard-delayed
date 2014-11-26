@@ -3,7 +3,13 @@ guard 'bundler' do
   watch(/^.+\.gemspec/)
 end
 
-guard 'rspec', :version => 2 do
+options = {
+  all_on_start: true,
+  all_after_pass: true,
+  cmd: 'spring rspec -f doc'
+}
+
+guard :rspec, options do
   watch(/^spec\/.*_spec\.rb/)
   watch(/^lib\/(.*)\.rb/)         { |m| "spec/#{m[1]}_spec.rb" }
   watch(/^spec\/spec_helper\.rb/) { "spec" }
