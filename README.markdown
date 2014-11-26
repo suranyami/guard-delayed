@@ -6,11 +6,7 @@ Guard::Delayed automatically starts/stops/restarts delayed_job
 
 Please be sure to have [Guard](http://github.com/guard/guard) installed before continuing.
 
-Install the gem:
-
-    gem install guard-delayed
-
-or add it to your Gemfile (inside your development and/or test group):
+Add it to your Gemfile (inside your development and/or test group):
 
     gem 'guard-delayed'
 
@@ -22,8 +18,7 @@ Add guard definition to your Guardfile by running this command:
 
 Please read [Guard usage doc](http://github.com/guard/guard#readme).
 
-I suggest you put the delayed guard definition *before* your test/rspec guard if your tests depend on it
-being active.
+I suggest you put the delayed guard definition *before* your test/rspec guard if your tests depend on it being active.
 
 ## Guardfile
 
@@ -44,16 +39,16 @@ Please create a topic branch for every separate change you make.
  * Update the version number in `lib/guard/delayed/version.rb`
  * Update `CHANGELOG.md`
  * Build the gem:
- 
+
     gem build guard-delayed.gemspec
 
  * Push to rubygems.org:
- 
-    gem push guard-delayed-0.2.1.gem
+
+    gem push guard-delayed-0.3.3.gem
 
 ## Testing the gem locally
 
-    gem install guard-delayed-0.2.1.gem
+    gem install guard-delayed-0.3.0.gem
 
 
 ## Authors
@@ -62,9 +57,3 @@ Please create a topic branch for every separate change you make.
 [Dennis Reimann](https://github.com/dbloete)
 
 Ideas for this gem came from [Guard::WEBrick](http://github.com/fnichol/guard-webrick).
-
-## Note
-
-I originally called this `guard-delayed_job` but had all sorts of unexpected behaviour when trying to build the gem.
-After much fruitless investigation it appeared that the underscore was the problem, so I renamed it to `guard-delayed`.
-Anybody else encountered this? Let me know if you have. Thanks in advance.
