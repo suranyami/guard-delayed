@@ -2,7 +2,7 @@ require 'guard'
 require 'guard/guard'
 
 module Guard
-  class Delayed < Guard
+  class Delayed < Plugin
 
     # Allowable options are:
     # :environment        defaults to 'test'
@@ -15,9 +15,9 @@ module Guard
     # :sleep-delay N      Amount of time to sleep in seconds when no jobs are found
     # :prefix NAME        String to be prefixed to worker process names
 
-    def initialize(watchers = [], options = {})
+    def initialize(options = {})
       @options = options
-      super(watchers, options)
+      super
     end
 
     def start
