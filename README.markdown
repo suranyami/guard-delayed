@@ -44,7 +44,7 @@ Please create a topic branch for every separate change you make.
 
  * Push to rubygems.org:
 
-    gem push guard-delayed-0.3.3.gem
+    gem push guard-delayed-0.3.0.gem
 
 ## Testing the gem locally
 
