@@ -16,13 +16,13 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 2.2'
   s.rubyforge_project = "guard-delayed"
 
-  s.add_dependency 'guard', '~> 0'
-  s.add_dependency 'delayed_job', '~> 0'
+  s.add_dependency 'guard', '>= 0.3', '< 3.0'
+  s.add_dependency 'delayed_job', '>= 0'
 
-  s.add_development_dependency 'bundler', '~> 0'
-  s.add_development_dependency 'rspec', '~> 0'
-  s.add_development_dependency 'guard-rspec', '~> 0'
-  s.add_development_dependency 'guard-bundler', '~> 0'
+  s.add_development_dependency 'bundler', '> 1.0.10'
+  s.add_development_dependency 'rspec', '> 2.5.0'
+  s.add_development_dependency 'guard-rspec', '> 0.2.0'
+  s.add_development_dependency 'guard-bundler', '> 0.1.1'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

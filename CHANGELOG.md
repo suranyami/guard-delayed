@@ -1,3 +1,7 @@
+## 0.3.1 (2015-02-19)
+
+* Modified the dependencies to support Guard 2
+
 ## 0.3.0 (2014-11-27)
 
 * Upgraded to work with Guard 2.
