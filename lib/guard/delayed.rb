@@ -1,5 +1,4 @@
-require 'guard'
-require 'guard/plugin'
+require "guard/compat/plugin"
 
 module Guard
   class Delayed < Plugin
@@ -16,13 +15,12 @@ module Guard
     # :prefix NAME        String to be prefixed to worker process names
 
     def initialize(options = {})
-      @options = options
       super
+      @options = options
     end
 
     def start
       run_cmd("stop")
-      UI.info "Starting up delayed_job..."
       parameters  = "start"
       parameters << " --min-priority #{@options[:min_priority]}" if @options[:min_priority]
       parameters << " --max-priority #{@options[:max_priority]}" if @options[:max_priority]
@@ -37,14 +35,12 @@ module Guard
 
     # Called on Ctrl-C signal (when Guard quits)
     def stop
-      UI.info "Stopping delayed_job..."
       run_cmd("stop")
     end
 
     # Called on Ctrl-Z signal
     # This method should be mainly used for "reload" (really!) actions like reloading passenger/spork/bundler/...
     def reload
-      UI.info "Restarting delayed_job..."
       restart
     end
 

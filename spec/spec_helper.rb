@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'guard/compat/test/helper'
 require 'guard/delayed'
 require "rspec"
 
@@ -11,7 +12,6 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
 
   config.before(:each) do
-    ::Guard::Notifier.stub(:notify).and_return(true)
     @fixture_path = Pathname.new(File.expand_path('../fixtures/', __FILE__))
   end
 
