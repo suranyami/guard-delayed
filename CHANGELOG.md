@@ -1,3 +1,7 @@
+## 0.3.3 (2015-06-26)
+
+* Loosened `guard` version dependency to be >= 3
+
 ## 0.3.2 (2015-06-25)
 
 * Version dependencies of `delayed_job`, `guard` updated.
