@@ -1,3 +1,7 @@
+## 0.3.2 (2015-06-25)
+
+* Version dependencies of `delayed_job`, `guard` updated.
+
 ## 0.3.1 (2015-02-19)
 
 * Modified the dependencies to support Guard 2
