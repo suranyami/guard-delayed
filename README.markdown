@@ -28,8 +28,6 @@ I suggest you put the delayed guard definition *before* your test/rspec guard if
 
 ## Options
 
-Allowable options are:
-
 ```
     :environment        defaults to 'test'
     :min_priority       e.g. 2
