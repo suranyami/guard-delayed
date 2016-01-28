@@ -62,11 +62,11 @@ Please create a topic branch for every separate change you make.
 
  * Push to rubygems.org:
 
-    gem push guard-delayed-0.3.4.gem
+    gem push guard-delayed-0.3.5.gem
 
 ## Testing the gem locally
 
-    gem install guard-delayed-0.3.4.gem
+    gem install guard-delayed-0.3.5.gem
 
 
 ## Authors
