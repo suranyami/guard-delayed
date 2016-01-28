@@ -13,6 +13,7 @@ module Guard
     # :monitor            Start monitor process.
     # :sleep-delay N      Amount of time to sleep in seconds when no jobs are found
     # :prefix NAME        String to be prefixed to worker process names
+    # :root               directory to find the executable. Defaults to ''
     # :command            Command to execute. Default to 'bin/delayed_job'
 
     def initialize(options = {})
