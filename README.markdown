@@ -26,6 +26,24 @@ I suggest you put the delayed guard definition *before* your test/rspec guard if
       watch(%r{^app/(.+)\.rb})
     end
 
+## Options
+
+Allowable options are:
+
+```
+    :environment        defaults to 'test'
+    :min_priority       e.g. 2
+    :max_priority       e.g. 10
+    :number_of_workers  e.g. 2
+    :pid_dir            e.g. tmp/pids Specifies an alternate directory in which to store the process ids.
+    :identifier         A numeric identifier for the worker.
+    :monitor            Start monitor process.
+    :sleep-delay N      Amount of time to sleep in seconds when no jobs are found
+    :prefix NAME        String to be prefixed to worker process names
+    :root               directory to find the executable. Defaults to ''
+    :command            Command to execute. Default to 'bin/delayed_job'
+```
+
 ## Development
 
  * Source hosted at [GitHub](http://github.com/suranyami/guard-delayed)
@@ -44,11 +62,11 @@ Please create a topic branch for every separate change you make.
 
  * Push to rubygems.org:
 
-    gem push guard-delayed-0.3.3.gem
+    gem push guard-delayed-0.3.4.gem
 
 ## Testing the gem locally
 
-    gem install guard-delayed-0.3.3.gem
+    gem install guard-delayed-0.3.4.gem
 
 
 ## Authors
