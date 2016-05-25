@@ -16,9 +16,9 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 2.2'
   s.rubyforge_project = "guard-delayed"
 
-  s.add_dependency "guard", "~> 2.1"
-  s.add_dependency "guard-compat", "~> 1.1"
-  s.add_dependency 'delayed_job', '~> 3'
+  s.add_dependency "guard", ">= 2"
+  s.add_dependency "guard-compat", ">= 1.1"
+  s.add_dependency 'delayed_job', '>= 3'
   
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rspec'
