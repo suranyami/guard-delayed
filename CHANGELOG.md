@@ -1,3 +1,8 @@
+## 0.3.4 (2016-01-28)
+
+* Merged PR from @ViZH that allows the executable dir to be configured, but uses `bin` instead of `script` by default.
+* Added notes about optional parameters that can be passed to delayed_job.
+
 ## 0.3.3 (2015-06-26)
 
 * Loosened `guard` version dependency to be >= 3
