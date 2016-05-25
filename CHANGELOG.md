@@ -1,3 +1,8 @@
+## 0.3.5 (2016-05-26)
+
+Somehow, loosening the guard dependency for release `0.3.3` didn't get pushed.
+Doh! Anyway, here it is now. Re-releasing.
+
 ## 0.3.4 (2016-01-28)
 
 * Merged PR from @ViZH that allows the executable dir to be configured, but uses `bin` instead of `script` by default.
