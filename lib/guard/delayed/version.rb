@@ -1,5 +1,5 @@
 module Guard
   module DelayedVersion
-    VERSION = "0.3.5"
+    VERSION = "0.3.8"
   end
 end

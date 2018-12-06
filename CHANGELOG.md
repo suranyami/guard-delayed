@@ -1,3 +1,7 @@
+## 0.3.8 (2018-12-06)
+
+* Depending on `delayed_job` `~> 4`
+
 ## 0.3.5 (2016-05-26)
 
 Somehow, loosening the guard dependency for release `0.3.3` didn't get pushed.
