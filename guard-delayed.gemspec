@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Guard::Delayedjob automatically starts/stops/restarts delayed_job}
   s.license     = "MIT"
 
-  s.required_rubygems_version = '~> 2.2'
+  s.required_rubygems_version = '~> 3'
   s.rubyforge_project = "guard-delayed"
 
   s.add_dependency "guard", "~> 2"

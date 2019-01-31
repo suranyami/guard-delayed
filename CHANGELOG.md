@@ -1,3 +1,7 @@
+## 0.4.0 (2019-01-31)
+
+* Depending on `required_rubygems_version` `~> 3`
+
 ## 0.3.8 (2018-12-06)
 
 * Depending on `delayed_job` `~> 4`
