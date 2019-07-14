@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.required_rubygems_version = '~> 3'
-  s.rubyforge_project = "guard-delayed"
 
   s.add_dependency "guard", "~> 2"
   s.add_dependency "guard-compat", "~> 1.1"
